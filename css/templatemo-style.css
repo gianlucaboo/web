@@ -1,0 +1,614 @@
+/*
+
+Volton Template
+
+http://www.templatemo.com/tm-441-volton
+
+*/
+
+@font-face {
+  font-family: 'PublicaLight2';
+  src: url("../fonts/publicasans-light-webfont.eot");
+  src: url("../fonts/publicasans-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/publicasans-light-webfont.woff") format("woff"), url("../fonts/publicasans-light-webfont.ttf") format("truetype"), url("../fonts/publicasans-light-webfont.svg#PublicaLight2") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PublicaRegular2';
+  src: url("../fonts/publicasans-regular-webfont.eot");
+  src: url("../fonts/publicasans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/publicasans-regular-webfontt.woff") format("woff"), url("../fonts/publicasans-regular-webfont.ttf") format("truetype"), url("../fonts/publicasans-regular-webfont.svg#PublicaRegular2") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PublicaMedium2';
+  src: url("../fonts/publicasans-medium-webfont.eot");
+  src: url("../fonts/publicasans-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/publicasans-medium-webfont.woff") format("woff"), url("../fonts/publicasans-medium-webfont.ttf") format("truetype"), url("../fonts/publicasans-medium-webfont.svg#PublicaMedium2") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'PublicaBlack2';
+  src: url("../fonts/publicasans-black-webfont.eot");
+  src: url("../fonts/publicasans-black-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/publicasans-black-webfont.woff") format("woff"), url("../fonts/publicasans-black-webfont.ttf") format("truetype"), url("../fonts/publicasans-black-webfont.svg#PublicaMedium2") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+/*---------------------------------------------------------
+ 1. Reset
+-------------------------------------------------------- */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+.blue {
+	color: #06C;
+}
+
+.green {
+	color: #090;
+}
+
+main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+a:focus {
+  outline: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+audio:not([controls]) {
+  display: none;
+}
+
+sub,
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -.5em;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+img {
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: baseline;
+  vertical-align: middle;
+}
+
+button,
+input {
+  line-height: normal;
+  *overflow: visible;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+
+input[type="search"]:-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+
+/*---------------------------------------------------------
+ 2. Basic Style
+-------------------------------------------------------- */
+body {
+	font-family: 'PublicaLight2';
+  	font-size: 15px;
+  	line-height: 22px;
+  	color: black;
+  	overflow-x: hidden;
+}
+
+p { 
+margin-top:10px 
+}
+
+a {
+  color: black;
+    font-family: 'PublicaMedium2';
+  -webkit-transition: all 150ms ease-in-out;
+  -moz-transition: all 150ms ease-in-out;
+  -ms-transition: all 150ms ease-in-out;
+  -o-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #3EACA8;
+  font-family: 'PublicaMedium2';
+
+}
+
+h1, h2, h3, h4, h5 {
+  color: black;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: black;
+}
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: black;
+}
+
+:-ms-input-placeholder {
+  color: black;
+}
+
+.main-content,
+.banner-bg {
+  float: right;
+  width: 77%;
+}
+@media screen and (max-width: 1290px) {
+  .main-content,
+  .banner-bg {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .main-content,
+  .banner-bg {
+    width: 100%;
+  }
+}
+
+.content-wrapper {
+  padding: 0 80px;
+}
+
+@media screen and (max-width: 992px) {
+  .content-wrapper {
+    padding: 0 30px;
+  }
+}
+
+h4.widget-title {
+  font-size: 20px;
+  font-family: 'PublicaMedium2';
+  margin-bottom: 40px;
+}
+
+hr {
+  position: relative;
+  outline: 0;
+  border: 0;
+  width: 100%;
+  height: 4px;
+  background: white;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+.page-section {
+  padding-top: 80px;
+}
+
+/*---------------------------------------------------------
+ 3. Header
+-------------------------------------------------------- */
+.sidebar-menu {
+  float: left;
+  width: 23%;
+  height: 100%;
+  position: fixed;
+  background-color: white;
+  color: black;
+  overflow-y: hidden;
+}
+@media screen and (max-width: 1290px) {
+  .sidebar-menu {
+    overflow-y: scroll;
+    width: 30%;
+  }
+}
+
+.top-section {
+  padding: 40px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  -webkit-border-radius: 75px;
+  border-radius: 75px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.profile-image img {
+  width: 100%;
+}
+
+h3.profile-title {
+  margin-bottom: 5px;
+  color: black;
+  font-size: 15.5 px;
+  font-family: 'PublicaMedium2';
+  text-transform: uppercase ;
+}
+
+.main-navigation {
+  margin: 30px 0;
+}
+.main-navigation li {
+  display: block;
+}
+.main-navigation li a {
+  padding: 15px 25px;
+  display: block;
+  color: black;
+  line-height:80%;
+  font-size: 18px;
+  font-family: 'PublicaLight2';
+
+}
+.main-navigation li a i {
+  margin-right: 15px;
+  font-family: 'PublicaLight2';
+  color: white;
+
+
+}
+.main-navigation li a:hover {
+  color: #3EACA8;
+  font-family: 'PublicaMedium2';
+}
+
+.main-navigation li a.active {
+   font-family: 'PublicaMedium2'; 
+  background: none;
+}
+.main-navigation li a.active:hover {
+  color: #3EACA8;
+  background: none;
+}
+
+.social-icons {
+  display: block;
+  padding: 30px 40px;
+}
+.social-icons li {
+  display: inline-block;
+  margin-right: 20px;
+}
+.social-icons a {
+  font-size: 18px;
+  color: black;
+}
+.social-icons a:hover {
+  color: black;
+}
+
+.responsive-header {
+  background: white;
+  text-align: center;
+}
+@media screen and (max-width: 992px) {
+  .responsive-header .main-navigation {
+    margin-top: 10px;
+    display: none;
+  }
+}
+@media screen and (max-width: 992px) {
+  .responsive-header p {
+    color: black;
+  }
+}
+@media screen and (max-width: 992px) {
+  .responsive-header .profile-image {
+    float: left;
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    overflow: hidden;
+    margin-right: 30px;
+  }
+  .responsive-header .profile-content {
+    text-align: left;
+    margin-top: 30px;
+    overflow: hidden;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .top-section {
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .main-navigation a {
+    padding: 10px;
+	background: black !important;
+	font-family: 'PublicaLight2';
+  }
+  .main-navigation a.active {
+    background: black !important;
+	font-family: 'PublicaLight2';
+  }
+  .main-navigation a:hover {
+    background: black !important;
+	font-family: 'PublicaMedium2';
+
+	
+  }
+}
+
+.toggle-menu {
+  width: 100%;
+  display: block;
+  padding: 20px;
+  margin-top: 30px;
+  background: black;
+  color: white;
+  font-size: 18px;
+}
+.toggle-menu:hover {
+  color: white;
+}
+
+/*---------------------------------------------------------
+ 4. Main Content
+-------------------------------------------------------- */
+/*------ banner ------ */
+.banner-bg {
+  padding: 260px 80px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 2;
+}
+
+.banner-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.welcome-text {
+  position: relative;
+  z-index: 4;
+}
+
+@media screen and (max-width: 992px) {
+  .welcome-text h2 {
+	  font-size: 25px !important;
+  }
+    .welcome-text h5 {
+	  font-size: 16px !important;
+  }
+  }
+
+.welcome-text h2 {
+  font-size: 40px;
+  font-family: 'PublicaMedium2';
+  color: black;
+  margin-bottom: 30px;
+  
+}
+.welcome-text h5 {
+  font-size: 22px;
+  color: black;
+  font-family: 'PublicaLight2';
+  line-height: 140%;
+}
+
+/*------ about us ------ */
+.about-image {
+  overflow: hidden;
+  border: 4px solid white
+  ;
+  margin-bottom: 40px;
+}
+.about-image img {
+  width: 100%;
+  display: block;
+}
+
+/*------ projects ------ */
+.projects-holder {
+  margin-right: 0;
+  margin-left: 0;
+  margin-top: 40px;
+}
+.projects-holder .col-md-4,
+.projects-holder .col-md-4 {
+  padding-right: 1px;
+  padding-left: 1px;
+}
+
+.project-item {
+  width: 100%;
+  margin-bottom: 2px;
+  overflow: hidden;
+  position: relative;
+}
+.project-item img {
+  width: 100%;
+  display: block;
+}
+.project-item:hover .project-hover {
+  top: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+.project-hover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 40px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+  visibility: 0;
+  -webkit-transition: all 200ms linear;
+  -moz-transition: all 200ms linear;
+  -ms-transition: all 200ms linear;
+  -o-transition: all 200ms linear;
+  transition: all 200ms linear;
+}
+.project-hover .inside {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  padding: 30px;
+}
+.project-hover h5 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+.project-hover h5 a {
+  color: white;
+}
+.project-hover p {
+  color: white;
+  font-size: 13px;
+  line-height: 20px;
+}
+
+/*------ contact ------ */
+.contact-form {
+  margin-top: 40px;
+}
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  outline: 0;
+  border: 1px solid black;
+  padding: 12px;
+  color: black;
+  margin-bottom: 30px;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+  outline: 0;
+}
+.contact-form .button {
+  width: auto;
+  background: black;
+  color: white;
+  text-transform: uppercase;
+  border: 0;
+}
+
+/*---------------------------------------------------------
+ 5. Footer
+-------------------------------------------------------- */
+#footer p.copyright-text {
+  margin: 40px 0;
+  font-size: 13px;
+}
+#footer p.copyright-text a {
+  color: #5f6d7e;
+}
+#footer p.copyright-text a:hover {
+  color: #6cc0f7;
+}
