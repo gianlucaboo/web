@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Irchel Campus: I sit here!</title>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+</head>
+
+<body>
+<div id="map" style="width: 700px; height: 500px;"></div>
+	<script> 
+// Map initial center and zoom
+	var map = L.map('map').setView([47.40, 8.55], 12);
+// Mapbox tile layer, zoom and sources
+	L.tileLayer('http://{s}.tiles.mapbox.com/v3/giuzgeo454.km4l8cpd/{z}/{x}/{y}.png', 
+	{maxZoom: 15,
+	minZoom:7,
+	attribution: '<a href="http://openstreetmap.org">OpenStreetMap</a> | <a href="http://www.mapbox.com">Mapbox</a>'
+	}).addTo(map);
+
+// Marker and pop-up customization
+var uniIcon = L.icon({
+            iconUrl: 'http://www.geo.uzh.ch/~gboo/university.png',
+            shadowSize:   [50, 64],
+            iconAnchor:   [10, 15],
+            shadowAnchor: [4, 62],
+            popupAnchor:  [0, 0]
+	});
+L.marker([47.39707, 8.54942], {icon: uniIcon}).addTo(map).bindPopup("<b>University of Zurich</b><br/><br/><img src='http://www.geo.uzh.ch/~gboo/uzh.jpg' style='width:152px;height:52px'/><br/><br/><a href='http://www.uzh.ch'/>Website</a>");
+</script> 
+
+
+</body>
+</html>

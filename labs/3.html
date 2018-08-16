@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title> Population Density in Switzerland </title>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"></link>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<link rel="1990" href="http://idiosyncraticmapper.net/labs/geojson/density1990_S.json" type="application/json"></link>
+<link rel="2000" href="http://idiosyncraticmapper.net/labs/geojson/density2000_S.json" type="application/json"></link>
+<link rel="2010" href="http://idiosyncraticmapper.net/labs//geojson/density2010_S.json" type="application/json"></link>
+
+<style>
+	.info {
+		padding: 8px 8px;
+		background: white;
+		background: rgba(255,255,255,1);
+		box-shadow: 0 0 15px rgba(0,0,0,0.2);
+		border-radius: 5px;
+		}
+	.info h4 {
+		margin: 0 0 5px;
+		color: #777;
+		}
+	.legend {
+		text-align: left;
+		line-height: 18px;
+		color: #000000;
+		}
+	.legend i {
+		width: 18px;
+		height: 18px;
+		float: left;
+		margin-right: 8px;
+		opacity: 1;
+	}
+	</style>
+
+
+</head>
+
+
+<body>
+<div id="densityMap" style="width: 900px; height: 600px; position: relative;" tabindex="0"></div>
+
+<script>
+var backgroundMap = L.tileLayer('https://a.tiles.mapbox.com/v3/giuzgeo454.kgng6i8j/{z}/{x}/{y}.png', {attribution: '<a href="http://openstreetmap.org">OpenStreetMap</a> | <a href="http://www.mapbox.com">Mapbox</a> | <a href="http://www.swisstopo.ch">Swisstopo</a>',
+maxZoom:8,
+minZoom:8
+});
+
+//2.2.1. Classes and color range definition 
+	function getColor(d) {
+    	return 	d > 300	? '#e31a1c' :
+          	d > 250	? '#fc4e2a' :
+           	d > 200	? '#fd8d3c' :
+           	d > 150	? '#feb24c' :
+          	d > 100	? '#fed976' :
+           	d > 50 	? '#ffeda0' :
+                      	 '#ffffcc' ;
+		}
+	// 2.2.2. GeoJSON style
+	function densityStyle(feature){
+    	return 	{
+      		"fillColor": getColor(feature.properties.density),
+      		"weight": 2,
+      		"opacity": 1,
+     		"color": '#000000',
+     		"fillOpacity": 0.7
+    		};
+  	}
+
+//2.3. GeoJSON request
+$.getJSON($('link[rel="1990"]').attr("href"), function(data) {var density1990 = L.geoJson(data,{style: densityStyle});
+$.getJSON($('link[rel="2000"]').attr("href"), function(data) {var density2000 = L.geoJson(data,{style: densityStyle});
+$.getJSON($('link[rel="2010"]').attr("href"), function(data) {var density2010 = L.geoJson(data,{style: densityStyle});
+
+//2.4. Web map container request
+
+var map = L.map('densityMap', {
+zoomControl: false,
+maxBounds:(density1990.getBounds())}).fitBounds(density1990.getBounds());
+	
+
+var control = L.control.layers( 
+		{
+		"Density in 2010": density2010,
+    	"Density in 2000": density2000,
+		"Density in 1990": density1990
+		},
+		null,
+		{collapsed:false});
+		
+var densityLegend = L.control({position: 'topleft'}); 
+ 		densityLegend.onAdd = function (map) { 
+ 		var div = L.DomUtil.create('div', 'info legend'), 
+ 		grades = [0, 50, 100, 150, 200, 250, 300], 
+labels = ['<strong> first_line <br> second_line</strong>']; 
+ 		for (var i = 0; i < grades.length; i++) { 
+ 		from = grades [i]; 
+ 		to = grades[i+1]-1; 
+ 		labels.push( 
+ 		'<i style="background:' + getColor(from + 1) + '"></i> ' + 
+		 from + (to ? '&ndash;' + to : '+')); 
+ 		} 
+ 		div.innerHTML = labels.join('<br>'); 
+ 		return div; 
+ 		};	
+
+		
+
+//3.1. Web map container features add
+backgroundMap.addTo(map);
+density1990.addTo(map);
+density2000.addTo(map);
+density2000.addTo(map);
+	control.addTo(map);
+		densityLegend.addTo(map);
+
+
+
+
+
+});
+});
+});
+</script>
+
+
+</body>
+</html>
