@@ -540,6 +540,9 @@
 .fa-twitter-square:before {
   content: "\f081";
 }
+.fa-researchgate-square:before {
+  content: "\f4f8";
+}
 .fa-facebook-square:before {
   content: "\f082";
 }
